@@ -32,10 +32,35 @@ let myObj = {                  //Object
     age: 22,
 }
 
-console.log(typeof myObj)
+// console.log(typeof myObj)
 
 
 const myFunction = function(){       //Function
     console.log("Hello world");
 }
 
+
+//-------------------------------------------------------------------------------------------------------------------
+
+//memory is of two types: Stack (used in Primitive datatypes), Heap (used in Non-Primitive datatypes)
+
+let myName="Unique Brain"
+
+let anotherName=myName
+anotherName="chaiaurcode"
+
+console.log(anotherName)    //so, here from the above example, anotherName had a copy of myName, but when we changed anotherName
+console.log(myName)         // it did not change the myName which was original...(Here, Stack memory is used..)
+
+
+//HEAP MEMORY
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "Unique@gmail.com"
+
+console.log(userOne.email);     // So, here we will find that both will have same output because userTwo had the reference of
+console.log(userTwo.email);     // userOne, which when changed in userOne, automatically changed in userOne. (--Heap Memory--) 
