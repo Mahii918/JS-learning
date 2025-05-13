@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color:#ffff">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent=document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);      //here we get HTML collection i.e. Array like collection
+    // console.log(parent.children[1]);   //here, we accessed the second element
+    // console.log(parent.children[1].innerHTML);   //Tuesday     //here, we get the complete text inside it
+
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);           //loop applied on HTML collection as it is similar to array
+    // }
+
+    parent.children[1].style.color="orange"            //changes the color of the second children of the parent class
+
+    // console.log(parent.firstElementChild);  //gives the first child in the collection   //So,we are moving from parent to child
+    // console.log(parent.lastElementChild);            //this gives the last child in the collection
+
+    const dayOne=document.querySelector('.day')
+    // console.log(dayOne);         //complete div tag of Monday
+    // console.log(dayOne.parentElement);   //by this we can go to parent element from child element
+    // console.log(dayOne.nextElementSibling);     //this will take you to the next element in the collection
+
+    console.log("NODES: ", parent.childNodes);  //this gives all the nodes in it, and is not equal to the no. of children 
+    // and here line break (or entering into next line) is also a node. Node takes the text written
+    
+
+</script>
+</html>
