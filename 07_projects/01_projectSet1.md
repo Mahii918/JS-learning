@@ -35,3 +35,41 @@ buttons.forEach(function(button){
 })
 
 ```
+
+## Project 2
+
+```javascript
+
+const form=document.querySelector('form')
+
+//the below operation will give you empty value, as as the value
+//has to be taken after submission
+// const height=parseInt(document.querySelector('height').value)
+
+form.addEventListener('submit',function(e){
+  e.preventDefault(); //generally, when submitted, it takes the values to the backend, which is actually not possible here. so we stop it in the start itself.
+
+  const height=parseInt(document.querySelector('#height').value)
+  const weight=parseInt(document.querySelector('#weight').value)
+
+  const results=document.querySelector('#results')
+
+  if(height===' ' || height<0 || isNaN(height)){
+    results.innerHTML="Please give a valid height";
+  }
+  // isNaN(x) -> tells whether x is Not a Number (True) 
+  // or a Number (False) 
+
+  else if(weight===' ' || weight<0 || isNaN(weight)){
+    results.innerHTML="Please give a valid weight";
+  } 
+
+  else{
+    const bmi=(weight / ((height*height)/10000)).toFixed(2);  
+    // .toFixed(2) means for 2 decimal places
+
+    results.innerHTML=`<span>${bmi}</span>`;
+  }
+})
+
+```
